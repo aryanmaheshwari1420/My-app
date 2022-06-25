@@ -6,6 +6,6 @@ import 'package:whole_shop/Screen2.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Screen1(),
+    home: Screen2(),
   ));
 }
