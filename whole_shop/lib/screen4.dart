@@ -158,7 +158,7 @@ class Screen4 extends StatelessWidget {
                     return welcomescreen();
                   }));
                 },
-                child: Text("go to login")),
+                child: Text("Go to welcome screen")),
           )
         ],
       )),

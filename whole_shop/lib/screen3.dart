@@ -26,7 +26,7 @@ class Screen3 extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 200, left: 30),
+              margin: EdgeInsets.only(top: 60, left: 30),
               child: Text(
                 "Sign Up",
                 style: TextStyle(fontSize: 40, color: Colors.white),
@@ -37,7 +37,7 @@ class Screen3 extends StatelessWidget {
                 padding: EdgeInsets.only(
                     right: 35,
                     left: 35,
-                    top: MediaQuery.of(context).size.height * 0.5),
+                    top: MediaQuery.of(context).size.height * 0.2),
                 child: Column(
                   children: [
                     TextField(
@@ -80,20 +80,31 @@ class Screen3 extends StatelessWidget {
                       height: 30,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "log in",
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w800),
-                        ),
-                      ],
-                    ),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      
+                      ElevatedButton(onPressed: (){}, child:Text(
+                        "Sign in",
+                        style: TextStyle(
+                            color: Colors.white70,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w800),
+                      ), )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Already registered?",style: TextStyle(fontSize: 15,color: Color.fromARGB(255, 54, 60, 61))),
+                      TextButton(onPressed: (){}, child: Text("Sign in",style: TextStyle(fontSize: 20),))
+                    ],
+                  ),
                     Container(
                       child: ElevatedButton(
-                        child: Text("go to screen 3"),
+                        child: Text("go to screen 4"),
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {

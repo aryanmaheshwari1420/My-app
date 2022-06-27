@@ -10,7 +10,7 @@ import 'package:whole_shop/screen3.dart';
 
 class Screen1 extends StatelessWidget {
   String title = "";
-  Screen1({Key? key,required this.title}) : super(key: key);
+  Screen1({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,12 @@ class Screen1 extends StatelessWidget {
                               horizontal: 100.0, vertical: 8.0),
                           shape: StadiumBorder(),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return Screen2(title: "Login");
+                          }));
+                        },
                         child: Text(
                           "Sign In",
                           style: TextStyle(fontSize: 24),
@@ -57,24 +62,19 @@ class Screen1 extends StatelessWidget {
                               horizontal: 100.0, vertical: 8.0),
                           shape: StadiumBorder(),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return Screen3(title: "Sign Up");
+                        }));
+
+                        },
                         child: Text(
                           "Sign Up",
                           style: TextStyle(
                               fontSize: 24, fontWeight: FontWeight.w300),
                         )),
                   ),
-                  Container(
-                    child: ElevatedButton(
-                      child: Text("got to screen-2"),
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return Screen2(title: "Login");
-                        }));
-                      },
-                    ),
-                  )
                 ],
               ),
             )),

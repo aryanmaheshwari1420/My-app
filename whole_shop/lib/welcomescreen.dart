@@ -14,7 +14,7 @@ class welcomescreen extends StatelessWidget {
       appBar: AppBar(
         title: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Center(child: Text("Welcome Screnn")),
+          child: Center(child: Text("Welcome Screen")),
         ),
       ),
       body: Center(
