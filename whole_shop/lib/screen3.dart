@@ -21,6 +21,7 @@ class Screen3 extends StatelessWidget {
                   "https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bG9naW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
               fit: BoxFit.cover)),
       child: Scaffold(
+        appBar: AppBar(title: Text("Sign Up Page",style: TextStyle(color: Colors.cyan.shade900,),),backgroundColor: Colors.blueGrey,),
         backgroundColor: Colors.transparent,
         body: Stack(
           children: [

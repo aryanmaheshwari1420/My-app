@@ -11,6 +11,7 @@ class Screen4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("Choose your pizza",style: TextStyle(color: Colors.amberAccent),)),
       body: SafeArea(
           child: ListView(
         children: [
