@@ -6,6 +6,7 @@ import 'package:whole_shop/screen4.dart';
 import 'package:whole_shop/screen3.dart';
 import 'package:whole_shop/welcomescreen.dart';
 
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -15,7 +16,9 @@ void main() {
       'S2':(context)=>Screen2(title: "Screen 2"),
       'S3':(context)=>Screen3(title:"Screen 3"),
       'S4':(context)=>Screen4(title:"Screen 4"),
-
     },
   ));
 }
+
+
+

@@ -84,12 +84,20 @@ class Screen3 extends StatelessWidget {
                     children: [
                       
                       ElevatedButton(onPressed: (){}, child:Text(
-                        "Sign in",
+                        "sign up",
                         style: TextStyle(
                             color: Colors.white70,
                             fontSize: 24,
                             fontWeight: FontWeight.w800),
-                      ), )
+                      ),),
+                       const SizedBox(
+                      width: 90,
+                    ),
+                       CircleAvatar(
+                        radius: 30,
+                        backgroundColor: Colors.blueAccent,
+                        child: IconButton(color: Colors.white,onPressed: (){}, icon: Icon(Icons.arrow_forward))
+                      ),
                     ],
                   ),
                   const SizedBox(
@@ -99,7 +107,10 @@ class Screen3 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Already registered?",style: TextStyle(fontSize: 15,color: Color.fromARGB(255, 54, 60, 61))),
-                      TextButton(onPressed: (){}, child: Text("Sign in",style: TextStyle(fontSize: 20),))
+                      TextButton(onPressed: (){}, child: Text("Sign in",style: TextStyle(fontSize: 20),
+                      )
+                      ),
+                     
                     ],
                   ),
                     Container(
