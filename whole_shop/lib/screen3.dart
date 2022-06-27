@@ -6,13 +6,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:whole_shop/screen3.dart';
 import 'package:whole_shop/screen4.dart';
-import 'package:whole_shop/welcomescreen.dart';
 
-class Screen2 extends StatelessWidget {
+class Screen3 extends StatelessWidget {
   String title = "";
-  Screen2({Key? key, required this.title}) : super(key: key);
+  Screen3({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +27,7 @@ class Screen2 extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 200, left: 30),
               child: Text(
-                "Login",
+                "Sign Up",
                 style: TextStyle(fontSize: 40, color: Colors.white),
               ),
             ),
@@ -64,6 +62,19 @@ class Screen2 extends StatelessWidget {
                         ),
                       ),
                     ),
+                     const SizedBox(
+                      height: 30,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        fillColor: Colors.grey.shade300,
+                        filled: true,
+                        hintText: 'Re-enterpassword',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                    ),
                     const SizedBox(
                       height: 30,
                     ),
@@ -85,7 +96,7 @@ class Screen2 extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return Screen3(title: 'sign up',);
+                            return Screen4(title: 'pizza screen',);
                           }));
                         },
                       ),

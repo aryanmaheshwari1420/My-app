@@ -4,9 +4,13 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
+import 'package:whole_shop/Screen2.dart';
+import 'package:whole_shop/screen4.dart';
+import 'package:whole_shop/screen3.dart';
 
 class Screen1 extends StatelessWidget {
-  const Screen1({Key? key}) : super(key: key);
+  String title = "";
+  Screen1({Key? key,required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +48,8 @@ class Screen1 extends StatelessWidget {
                         )),
                   ),
                   const SizedBox(
-                      height: 15,
-                    ),
+                    height: 15,
+                  ),
                   Container(
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -56,9 +60,21 @@ class Screen1 extends StatelessWidget {
                         onPressed: () {},
                         child: Text(
                           "Sign Up",
-                          style: TextStyle(fontSize: 24,fontWeight: FontWeight.w300),
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.w300),
                         )),
                   ),
+                  Container(
+                    child: ElevatedButton(
+                      child: Text("got to screen-2"),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return Screen2(title: "Login");
+                        }));
+                      },
+                    ),
+                  )
                 ],
               ),
             )),
