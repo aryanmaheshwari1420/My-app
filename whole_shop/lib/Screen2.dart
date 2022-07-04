@@ -4,10 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class screen2 extends StatelessWidget {
+class screen2 extends StatefulWidget {
   String title = '';
-  screen2({Key? key,required this.title}) : super(key: key);
+  screen2({Key? key, required this.title}) : super(key: key);
 
+  @override
+  State<screen2> createState() => _screen2State();
+}
+
+class _screen2State extends State<screen2> {
+  var _securetext = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +59,7 @@ class screen2 extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 80, left: 10, right: 10),
                   child: TextField(
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       fillColor: Colors.grey.shade300,
                       filled: true,
@@ -66,6 +73,7 @@ class screen2 extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
                   child: TextField(
+                    obscureText: _securetext,
                     decoration: InputDecoration(
                       fillColor: Colors.grey.shade300,
                       filled: true,
@@ -73,6 +81,15 @@ class screen2 extends StatelessWidget {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
+                       suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _securetext = !_securetext;
+                                });
+                              },
+                              icon: Icon(_securetext
+                                  ? Icons.remove_red_eye_sharp
+                                  : Icons.remove_red_eye_outlined))
                     ),
                   ),
                 ),

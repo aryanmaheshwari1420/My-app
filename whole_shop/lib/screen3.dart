@@ -17,6 +17,10 @@ class Screen3 extends StatefulWidget {
 
 class _Screen3State extends State<Screen3> {
   var _secureText = true;
+  TextEditingController _passcontroller = TextEditingController();
+  TextEditingController _emailcontroller = TextEditingController();
+  TextEditingController _re_passcontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,6 +58,8 @@ class _Screen3State extends State<Screen3> {
                 child: Column(
                   children: [
                     TextField(
+                      keyboardType: TextInputType.emailAddress,
+                      controller: _emailcontroller,
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade300,
                         filled: true,
@@ -67,6 +73,7 @@ class _Screen3State extends State<Screen3> {
                       height: 30,
                     ),
                     TextField(
+                      controller: _passcontroller,
                       decoration: InputDecoration(
                           fillColor: Colors.grey.shade300,
                           filled: true,
@@ -80,15 +87,16 @@ class _Screen3State extends State<Screen3> {
                                   _secureText = !_secureText;
                                 });
                               },
-                              icon: Icon(
-                                _secureText?
-                                Icons.remove_red_eye_sharp:Icons.remove_red_eye_outlined))),
+                              icon: Icon(_secureText
+                                  ? Icons.remove_red_eye_sharp
+                                  : Icons.remove_red_eye_outlined))),
                       obscureText: _secureText,
                     ),
                     const SizedBox(
                       height: 30,
                     ),
                     TextField(
+                      controller: _re_passcontroller,
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade300,
                         filled: true,
@@ -96,6 +104,15 @@ class _Screen3State extends State<Screen3> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
+                         suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _secureText = !_secureText;
+                                });
+                              },
+                              icon: Icon(_secureText
+                                  ? Icons.remove_red_eye_sharp
+                                  : Icons.remove_red_eye_outlined))
                       ),
                     ),
                     const SizedBox(
@@ -105,7 +122,10 @@ class _Screen3State extends State<Screen3> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            print(
+                                "email:${_emailcontroller.text} \n password : ${_passcontroller.text} \n re-pass : ${_re_passcontroller.text}");
+                          },
                           child: Text(
                             "sign up",
                             style: TextStyle(
@@ -137,7 +157,9 @@ class _Screen3State extends State<Screen3> {
                                 fontSize: 15,
                                 color: Color.fromARGB(255, 54, 60, 61))),
                         TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, 'S2');
+                            },
                             child: Text(
                               "Sign in",
                               style: TextStyle(fontSize: 20),
