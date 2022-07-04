@@ -5,7 +5,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:whole_shop/screen3.dart';
 
-import 'Screen2.dart';
+import 'screen2.dart';
 
 class Screen1 extends StatelessWidget {
   String title = '';
@@ -61,7 +61,7 @@ class Screen1 extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return Screen2(title: "Login");
+                            return screen2(title: "Login");
                           }));
                         },
                         child: Text(
