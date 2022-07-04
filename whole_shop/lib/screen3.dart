@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
@@ -8,10 +7,16 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:whole_shop/screen4.dart';
 
-class Screen3 extends StatelessWidget {
+class Screen3 extends StatefulWidget {
   String title = "";
   Screen3({Key? key, required this.title}) : super(key: key);
 
+  @override
+  State<Screen3> createState() => _Screen3State();
+}
+
+class _Screen3State extends State<Screen3> {
+  var _secureText = true;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +26,15 @@ class Screen3 extends StatelessWidget {
                   "https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bG9naW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
               fit: BoxFit.cover)),
       child: Scaffold(
-        appBar: AppBar(title: Text("Sign Up Page",style: TextStyle(color: Color.fromARGB(255, 238, 243, 244),),),backgroundColor: Color.fromARGB(255, 141, 125, 88),),
+        appBar: AppBar(
+          title: Text(
+            "Sign Up Page",
+            style: TextStyle(
+              color: Color.fromARGB(255, 238, 243, 244),
+            ),
+          ),
+          backgroundColor: Color.fromARGB(255, 141, 125, 88),
+        ),
         backgroundColor: Colors.transparent,
         body: Stack(
           children: [
@@ -55,15 +68,24 @@ class Screen3 extends StatelessWidget {
                     ),
                     TextField(
                       decoration: InputDecoration(
-                        fillColor: Colors.grey.shade300,
-                        filled: true,
-                        hintText: 'password',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
+                          fillColor: Colors.grey.shade300,
+                          filled: true,
+                          hintText: 'password',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _secureText = !_secureText;
+                                });
+                              },
+                              icon: Icon(
+                                _secureText?
+                                Icons.remove_red_eye_sharp:Icons.remove_red_eye_outlined))),
+                      obscureText: _secureText,
                     ),
-                     const SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     TextField(
@@ -80,46 +102,57 @@ class Screen3 extends StatelessWidget {
                       height: 30,
                     ),
                     Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      
-                      ElevatedButton(onPressed: (){}, child:Text(
-                        "sign up",
-                        style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w800),
-                      ),),
-                       const SizedBox(
-                      width: 90,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            "sign up",
+                            style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: 24,
+                                fontWeight: FontWeight.w800),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 90,
+                        ),
+                        CircleAvatar(
+                            radius: 30,
+                            backgroundColor: Colors.blueAccent,
+                            child: IconButton(
+                                color: Colors.white,
+                                onPressed: () {},
+                                icon: Icon(Icons.arrow_forward))),
+                      ],
                     ),
-                       CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.blueAccent,
-                        child: IconButton(color: Colors.white,onPressed: (){}, icon: Icon(Icons.arrow_forward))
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Already registered?",style: TextStyle(fontSize: 15,color: Color.fromARGB(255, 54, 60, 61))),
-                      TextButton(onPressed: (){}, child: Text("Sign in",style: TextStyle(fontSize: 20),
-                      )
-                      ),
-                     
-                    ],
-                  ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Already registered?",
+                            style: TextStyle(
+                                fontSize: 15,
+                                color: Color.fromARGB(255, 54, 60, 61))),
+                        TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Sign in",
+                              style: TextStyle(fontSize: 20),
+                            )),
+                      ],
+                    ),
                     Container(
                       child: ElevatedButton(
                         child: Text("go to screen 4"),
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return Screen4(title: 'pizza screen',);
+                            return Screen4(
+                              title: 'pizza screen',
+                            );
                           }));
                         },
                       ),
