@@ -26,7 +26,7 @@ class Screen1 extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              // color: Colors.red,
+              color: Colors.red,
 
               height: 800,
               width: 450,
@@ -37,15 +37,16 @@ class Screen1 extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 35, color: Color.fromARGB(255, 184, 203, 204)),
                 ),
+                
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 370, left: 15),
             child: Container(
-              height: 250,
-              width: 350,
-              // color: Colors.green,
+              height: 400,
+              width: 370,
+              color: Colors.green,
               child: Column(
                 children: [
                   Container(
