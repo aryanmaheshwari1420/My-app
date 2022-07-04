@@ -17,6 +17,8 @@ class Screen3 extends StatefulWidget {
 
 class _Screen3State extends State<Screen3> {
   var _secureText = true;
+  String? _emailError = null;
+  var _passError = null;
   TextEditingController _passcontroller = TextEditingController();
   TextEditingController _emailcontroller = TextEditingController();
   TextEditingController _re_passcontroller = TextEditingController();
@@ -61,6 +63,7 @@ class _Screen3State extends State<Screen3> {
                       keyboardType: TextInputType.emailAddress,
                       controller: _emailcontroller,
                       decoration: InputDecoration(
+                        errorText: _emailError,
                         fillColor: Colors.grey.shade300,
                         filled: true,
                         hintText: 'Email',
@@ -75,6 +78,7 @@ class _Screen3State extends State<Screen3> {
                     TextField(
                       controller: _passcontroller,
                       decoration: InputDecoration(
+                          errorText: _passError,
                           fillColor: Colors.grey.shade300,
                           filled: true,
                           hintText: 'password',
@@ -98,13 +102,13 @@ class _Screen3State extends State<Screen3> {
                     TextField(
                       controller: _re_passcontroller,
                       decoration: InputDecoration(
-                        fillColor: Colors.grey.shade300,
-                        filled: true,
-                        hintText: 'Re-enterpassword',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                         suffixIcon: IconButton(
+                          fillColor: Colors.grey.shade300,
+                          filled: true,
+                          hintText: 'Re-enterpassword',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
                                   _secureText = !_secureText;
@@ -112,8 +116,7 @@ class _Screen3State extends State<Screen3> {
                               },
                               icon: Icon(_secureText
                                   ? Icons.remove_red_eye_sharp
-                                  : Icons.remove_red_eye_outlined))
-                      ),
+                                  : Icons.remove_red_eye_outlined))),
                     ),
                     const SizedBox(
                       height: 30,
@@ -123,6 +126,15 @@ class _Screen3State extends State<Screen3> {
                       children: [
                         ElevatedButton(
                           onPressed: () {
+                            setState(() {
+                              if (_emailcontroller.text.length < 8) {
+                                _emailError = "Enter a valid email";
+                              } else if (_passcontroller.text.length < 5) {
+                                _passError = "Enter a valid pass";
+                              } else {
+                                null;
+                              }
+                            });
                             print(
                                 "email:${_emailcontroller.text} \n password : ${_passcontroller.text} \n re-pass : ${_re_passcontroller.text}");
                           },
