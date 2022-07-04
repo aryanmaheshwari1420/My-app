@@ -13,7 +13,11 @@ class screen2 extends StatefulWidget {
 }
 
 class _screen2State extends State<screen2> {
+  TextEditingController _passcontroller = TextEditingController();
+  TextEditingController _emailcontroller = TextEditingController();
   var _securetext = true;
+  var _erroremail = null;
+  var _errorpass = null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,8 +63,10 @@ class _screen2State extends State<screen2> {
                 Padding(
                   padding: const EdgeInsets.only(top: 80, left: 10, right: 10),
                   child: TextField(
+                    controller: _emailcontroller,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
+                      errorText: _erroremail,
                       fillColor: Colors.grey.shade300,
                       filled: true,
                       hintText: 'Email',
@@ -73,24 +79,25 @@ class _screen2State extends State<screen2> {
                 Padding(
                   padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
                   child: TextField(
+                    controller: _passcontroller,
                     obscureText: _securetext,
                     decoration: InputDecoration(
-                      fillColor: Colors.grey.shade300,
-                      filled: true,
-                      hintText: 'password',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                       suffixIcon: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  _securetext = !_securetext;
-                                });
-                              },
-                              icon: Icon(_securetext
-                                  ? Icons.remove_red_eye_sharp
-                                  : Icons.remove_red_eye_outlined))
-                    ),
+                        errorText: _errorpass,
+                        fillColor: Colors.grey.shade300,
+                        filled: true,
+                        hintText: 'password',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _securetext = !_securetext;
+                              });
+                            },
+                            icon: Icon(_securetext
+                                ? Icons.remove_red_eye_sharp
+                                : Icons.remove_red_eye_outlined))),
                   ),
                 ),
                 SizedBox(
@@ -100,7 +107,17 @@ class _screen2State extends State<screen2> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          if (_emailcontroller.text.length < 5) {
+                            _erroremail = "Enter a valid email";
+                          } else if (_passcontroller.text.length < 5) {
+                            _errorpass = "Enter a valid pass";
+                          } else {
+                            return null;
+                          }
+                        });
+                      },
                       child: Text(
                         "Sign in",
                         style: TextStyle(

@@ -132,7 +132,7 @@ class _Screen3State extends State<Screen3> {
                               } else if (_passcontroller.text.length < 5) {
                                 _passError = "Enter a valid pass";
                               } else {
-                                null;
+                                return null;
                               }
                             });
                             print(
