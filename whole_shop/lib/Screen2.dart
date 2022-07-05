@@ -116,6 +116,8 @@ class _screen2State extends State<screen2> {
                           } else {
                             return null;
                           }
+                           print(
+                                "email:${_emailcontroller.text} \n password : ${_passcontroller.text}");
                         });
                       },
                       child: Text(
