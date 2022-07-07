@@ -66,6 +66,7 @@ class _screen2State extends State<screen2> {
                     controller: _emailcontroller,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
+                      suffixIcon: IconButton(onPressed: _emailcontroller.clear, icon: Icon(Icons.clear)),
                       errorText: _erroremail,
                       fillColor: Colors.grey.shade300,
                       filled: true,
@@ -90,6 +91,7 @@ class _screen2State extends State<screen2> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         suffixIcon: IconButton(
+                          
                             onPressed: () {
                               setState(() {
                                 _securetext = !_securetext;
@@ -109,9 +111,9 @@ class _screen2State extends State<screen2> {
                     ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          if (_emailcontroller.text.length < 5) {
+                          if (_emailcontroller.text.length <=5) {
                             _erroremail = "Enter a valid email";
-                          } else if (_passcontroller.text.length < 5) {
+                          }  if (_passcontroller.text.length <=5) {
                             _errorpass = "Enter a valid pass";
                           } else {
                             return null;

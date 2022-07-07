@@ -16,8 +16,10 @@ class screen_3 extends StatefulWidget {
 class _screen_3State extends State<screen_3> {
   var _secureText = true;
   var _secureText_2 = true;
+  var msgController = TextEditingController();
   String? _emailError = null;
   var _passError = null;
+  var _repasserror = null;
   TextEditingController _passcontroller = TextEditingController();
   TextEditingController _emailcontroller = TextEditingController();
   TextEditingController _re_passcontroller = TextEditingController();
@@ -70,6 +72,7 @@ class _screen_3State extends State<screen_3> {
                   keyboardType: TextInputType.emailAddress,
                   controller: _emailcontroller,
                   decoration: InputDecoration(
+                     suffixIcon: IconButton(onPressed: _emailcontroller.clear, icon: Icon(Icons.clear)),
                     errorText: _emailError,
                     fillColor: Colors.grey.shade300,
                     filled: true,
@@ -110,6 +113,7 @@ class _screen_3State extends State<screen_3> {
                   obscureText: _secureText_2,
                   controller: _re_passcontroller,
                   decoration: InputDecoration(
+                      errorText: _repasserror,
                       fillColor: Colors.grey.shade300,
                       filled: true,
                       hintText: 'Re-enterpassword',
@@ -135,10 +139,14 @@ class _screen_3State extends State<screen_3> {
                     ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          if (_emailcontroller.text.length < 8) {
+                          if (_emailcontroller.text.length <=8) {
                             _emailError = "Enter a valid email";
-                          } else if (_passcontroller.text.length < 5) {
+                          }
+                          if (_passcontroller.text.length <=5) {
                             _passError = "Enter a valid pass";
+                          }
+                          if (_re_passcontroller.text.length <= 8) {
+                            _repasserror = "Enter the same email";
                           } else {
                             return null;
                           }
@@ -192,9 +200,7 @@ class _screen_3State extends State<screen_3> {
                         return Screen4(
                           title: 'pizza screen',
                         );
-                      }
-                      )
-                      );
+                      }));
                     },
                   ),
                 )
