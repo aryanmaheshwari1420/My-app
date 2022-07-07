@@ -72,7 +72,9 @@ class _screen_3State extends State<screen_3> {
                   keyboardType: TextInputType.emailAddress,
                   controller: _emailcontroller,
                   decoration: InputDecoration(
-                     suffixIcon: IconButton(onPressed: _emailcontroller.clear, icon: Icon(Icons.clear)),
+                    suffixIcon: IconButton(
+                        onPressed: _emailcontroller.clear,
+                        icon: Icon(Icons.clear)),
                     errorText: _emailError,
                     fillColor: Colors.grey.shade300,
                     filled: true,
@@ -139,20 +141,22 @@ class _screen_3State extends State<screen_3> {
                     ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          if (_emailcontroller.text.length <=8) {
+                          if (_emailcontroller.text.length <= 8) {
+                            if (_passcontroller.text.length <= 5) {
+                              if (_re_passcontroller.text.length <= 8) {
+                                _repasserror = "Enter the same email";
+                              }
+                              _passError = "Enter a valid pass";
+                            }
                             _emailError = "Enter a valid email";
                           }
-                          if (_passcontroller.text.length <=5) {
-                            _passError = "Enter a valid pass";
-                          }
-                          if (_re_passcontroller.text.length <= 8) {
-                            _repasserror = "Enter the same email";
-                          } else {
-                            return null;
-                          }
+
+                          print(
+                              "email:${_emailcontroller.text} \n password : ${_passcontroller.text} \n re-pass : ${_re_passcontroller.text}");
                         });
-                        print(
-                            "email:${_emailcontroller.text} \n password : ${_passcontroller.text} \n re-pass : ${_re_passcontroller.text}");
+                        _emailcontroller.clear();
+                        _passcontroller.clear();
+                        _re_passcontroller.clear();
                       },
                       child: Text(
                         "sign up",

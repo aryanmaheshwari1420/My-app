@@ -13,12 +13,17 @@ class screen2 extends StatefulWidget {
 }
 
 class _screen2State extends State<screen2> {
-  TextEditingController _passcontroller = TextEditingController();
-  TextEditingController _emailcontroller = TextEditingController();
+  final _passcontroller = TextEditingController();
+  final _emailcontroller = TextEditingController();
   var _securetext = true;
   var _erroremail = null;
   var _errorpass = null;
   @override
+  void clearText() {
+    _emailcontroller.clear();
+    _passcontroller.clear();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -66,7 +71,9 @@ class _screen2State extends State<screen2> {
                     controller: _emailcontroller,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      suffixIcon: IconButton(onPressed: _emailcontroller.clear, icon: Icon(Icons.clear)),
+                      suffixIcon: IconButton(
+                          onPressed: _emailcontroller.clear,
+                          icon: Icon(Icons.clear)),
                       errorText: _erroremail,
                       fillColor: Colors.grey.shade300,
                       filled: true,
@@ -91,7 +98,6 @@ class _screen2State extends State<screen2> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         suffixIcon: IconButton(
-                          
                             onPressed: () {
                               setState(() {
                                 _securetext = !_securetext;
@@ -111,16 +117,17 @@ class _screen2State extends State<screen2> {
                     ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          if (_emailcontroller.text.length <=5) {
+                          if (_emailcontroller.text.length <= 5) {
+                            if (_passcontroller.text.length <= 5) {
+                              _errorpass = "Enter a valid pass";
+                            }
                             _erroremail = "Enter a valid email";
-                          }  if (_passcontroller.text.length <=5) {
-                            _errorpass = "Enter a valid pass";
-                          } else {
-                            return null;
                           }
-                           print(
-                                "email:${_emailcontroller.text} \n password : ${_passcontroller.text}");
+                          print(
+                              "email:${_emailcontroller.text} \n password : ${_passcontroller.text}");
                         });
+                        _emailcontroller.clear();
+                        _passcontroller.clear();
                       },
                       child: Text(
                         "Sign in",
