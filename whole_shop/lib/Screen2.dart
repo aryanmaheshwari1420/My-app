@@ -122,9 +122,10 @@ class _screen2State extends State<screen2> {
                               _errorpass = "Enter a valid pass";
                             }
                             _erroremail = "Enter a valid email";
+                          } else {
+                            print(
+                                "email:${_emailcontroller.text} \n password : ${_passcontroller.text}");
                           }
-                          print(
-                              "email:${_emailcontroller.text} \n password : ${_passcontroller.text}");
                         });
                         _emailcontroller.clear();
                         _passcontroller.clear();

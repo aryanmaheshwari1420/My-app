@@ -12,7 +12,7 @@ import 'package:whole_shop/welcomescreen.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: screen2(title: 'login',),
+    home: screen_3(title: "helloji"),
     routes: {
       'S1':(context)=>Screen1(title: "Screen 1"),
       'S2':(context)=>screen2(title: 'Screen 2'),

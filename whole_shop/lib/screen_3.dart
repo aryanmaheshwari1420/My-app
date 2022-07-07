@@ -133,51 +133,56 @@ class _screen_3State extends State<screen_3> {
                               : Icons.remove_red_eye_outlined))),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          if (_emailcontroller.text.length <= 8) {
-                            if (_passcontroller.text.length <= 5) {
-                              if (_re_passcontroller.text.length <= 8) {
-                                _repasserror = "Enter the same email";
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            if (_emailcontroller.text.length <= 8) {
+                              if (_passcontroller.text.length <= 5) {
+                                if (_re_passcontroller.text.length <= 8) {
+                                  _repasserror = "Enter the same email";
+                                }
+                                _passError = "Enter a valid pass";
                               }
-                              _passError = "Enter a valid pass";
+                              _emailError = "Enter a valid email";
+                            } else {
+                              print(
+                                  "email:${_emailcontroller.text} \n password : ${_passcontroller.text} \n re-pass : ${_re_passcontroller.text}");
                             }
-                            _emailError = "Enter a valid email";
-                          }
-
-                          print(
-                              "email:${_emailcontroller.text} \n password : ${_passcontroller.text} \n re-pass : ${_re_passcontroller.text}");
-                        });
-                        _emailcontroller.clear();
-                        _passcontroller.clear();
-                        _re_passcontroller.clear();
-                      },
-                      child: Text(
-                        "sign up",
-                        style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w800),
+                          });
+                          _emailcontroller.clear();
+                          _passcontroller.clear();
+                          _re_passcontroller.clear();
+                        },  
+                        child: Center(
+                          child: Text(
+                            "sign up",
+                            style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: 24,
+                                fontWeight: FontWeight.w800),
+                          ),
+                        ),
                       ),
                     ),
-                    const SizedBox(
-                      width: 90,
-                    ),
-                    CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.blueAccent,
-                        child: IconButton(
-                            color: Colors.white,
-                            onPressed: () {},
-                            icon: Icon(Icons.arrow_forward))),
+                    // const SizedBox(
+                    //   width: 90,
+                    // ),
+                    // CircleAvatar(
+                    //     radius: 30,
+                    //     backgroundColor: Colors.blueAccent,
+                    //     child: IconButton(
+                    //         color: Colors.white,
+                    //         onPressed: () {},
+                    //         icon: Icon(Icons.arrow_forward))),
                   ],
                 ),
+                SizedBox(height: 12,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -195,6 +200,7 @@ class _screen_3State extends State<screen_3> {
                         )),
                   ],
                 ),
+                SizedBox(height: 20,),
                 Container(
                   child: ElevatedButton(
                     child: Text("go to screen 4"),
