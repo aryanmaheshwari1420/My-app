@@ -1,5 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+// import 'dart:js_util';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -15,9 +18,28 @@ class screen2 extends StatefulWidget {
 class _screen2State extends State<screen2> {
   final _passcontroller = TextEditingController();
   final _emailcontroller = TextEditingController();
+
   var _securetext = true;
   var _erroremail = null;
   var _errorpass = null;
+
+  //creating an instance of firebase
+
+  final firebase = FirebaseFirestore.instance;
+
+  void printData() async {
+    try {
+      print(
+          "email:${_emailcontroller.text} \n password : ${_passcontroller.text}");
+      await firebase.collection("User").doc().set({
+        "email": _emailcontroller.text,
+        "password": _passcontroller.text,
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   void clearText() {
     _emailcontroller.clear();
@@ -123,8 +145,7 @@ class _screen2State extends State<screen2> {
                             }
                             _erroremail = "Enter a valid email";
                           } else {
-                            print(
-                                "email:${_emailcontroller.text} \n password : ${_passcontroller.text}");
+                            printData();
                           }
                         });
                         _emailcontroller.clear();

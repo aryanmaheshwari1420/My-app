@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whole_shop/Screen1.dart';
@@ -8,19 +9,19 @@ import 'package:whole_shop/screen2.dart';
 import 'package:whole_shop/screen_3.dart';
 import 'package:whole_shop/welcomescreen.dart';
 
+void main()  async{
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
+  await Firebase.initializeApp();
+
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: screen2(title: 'hfj'),
     routes: {
-      'S1':(context)=>Screen1(title: "Screen 1"),
-      'S2':(context)=>screen2(title: 'Screen 2'),
-      'S3':(context)=>Screen3(title:"Screen 3"),
-      'S4':(context)=>Screen4(title:"Screen 4"),
+      'S1': (context) => Screen1(title: "Screen 1"),
+      'S2': (context) => screen2(title: 'Screen 2'),
+      'S3': (context) => Screen3(title: "Screen 3"),
+      'S4': (context) => Screen4(title: "Screen 4"),
     },
   ));
 }
-
-
-
