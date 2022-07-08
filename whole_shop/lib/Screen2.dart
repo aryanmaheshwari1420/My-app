@@ -31,7 +31,7 @@ class _screen2State extends State<screen2> {
     try {
       print(
           "email:${_emailcontroller.text} \n password : ${_passcontroller.text}");
-      await firebase.collection("User").doc().set({
+      await firebase.collection("User").doc(_emailcontroller.text).set({
         "email": _emailcontroller.text,
         "password": _passcontroller.text,
       });
