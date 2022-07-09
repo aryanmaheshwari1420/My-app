@@ -54,7 +54,7 @@ class Screen1 extends StatelessWidget {
                     child: ElevatedButton(
                         style: 
                         ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 155, 204, 235),
+                          primary: Color.fromARGB(255, 27, 88, 125),
                           shadowColor: Colors.grey,
                           padding: EdgeInsets.symmetric(
                               horizontal: 100.0, vertical: 8.0),
@@ -78,7 +78,7 @@ class Screen1 extends StatelessWidget {
                   Container(
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 155, 204, 235),
+                          primary: Color.fromARGB(255, 27, 88, 125),
                           shadowColor: Colors.lightBlueAccent,
                           padding: EdgeInsets.symmetric(
                               horizontal: 100.0, vertical: 8.0),
