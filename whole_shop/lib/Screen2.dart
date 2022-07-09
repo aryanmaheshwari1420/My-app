@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:whole_shop/screen_3.dart';
 
 class screen2 extends StatefulWidget {
   String title = '';
@@ -31,7 +32,7 @@ class _screen2State extends State<screen2> {
     try {
       print(
           "email:${_emailcontroller.text} \n password : ${_passcontroller.text}");
-      await firebase.collection("User").doc(_emailcontroller.text).set({
+      await firebase.collection("User Login").doc(_emailcontroller.text).set({
         "email": _emailcontroller.text,
         "password": _passcontroller.text,
       });
@@ -100,6 +101,7 @@ class _screen2State extends State<screen2> {
                       fillColor: Colors.grey.shade300,
                       filled: true,
                       hintText: 'Email',
+                      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -116,6 +118,7 @@ class _screen2State extends State<screen2> {
                         fillColor: Colors.grey.shade300,
                         filled: true,
                         hintText: 'password',
+                        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -130,9 +133,23 @@ class _screen2State extends State<screen2> {
                                 : Icons.remove_red_eye_outlined))),
                   ),
                 ),
-                SizedBox(
-                  height: 30,
+                SizedBox(height: 10,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return screen_3(title: "login screen");
+                          }));
+                        },
+                        child: Text(
+                          "Forgot password?",
+                          style: TextStyle(fontSize: 15,color: Colors.black54),
+                        )),
+                  ],
                 ),
+                SizedBox(height: 5),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -150,6 +167,7 @@ class _screen2State extends State<screen2> {
                         });
                         _emailcontroller.clear();
                         _passcontroller.clear();
+                        Navigator.pushNamed(context, "S5");
                       },
                       child: Text(
                         "Sign in",
@@ -173,7 +191,11 @@ class _screen2State extends State<screen2> {
                           fontSize: 15, color: Color.fromARGB(255, 54, 60, 61)),
                     ),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return screen_3(title: "Sign up");
+                          }));
+                        },
                         child: Text(
                           "Create an account",
                           style: TextStyle(fontSize: 20),

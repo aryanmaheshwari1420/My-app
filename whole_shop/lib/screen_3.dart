@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors, avoid_returning_null_for_void
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:whole_shop/dashboard.dart';
 import 'package:whole_shop/screen4.dart';
 
 class screen_3 extends StatefulWidget {
@@ -23,6 +25,28 @@ class _screen_3State extends State<screen_3> {
   TextEditingController _passcontroller = TextEditingController();
   TextEditingController _emailcontroller = TextEditingController();
   TextEditingController _re_passcontroller = TextEditingController();
+
+  final firebase = FirebaseFirestore.instance;
+
+  void printData() async {
+    try {
+      print(
+          "email:${_emailcontroller.text} \n password : ${_passcontroller.text} \n re-pass : ${_re_passcontroller.text}");
+      await firebase.collection("User Sign up").doc(_emailcontroller.text).set({
+        "email": _emailcontroller.text,
+        "password": _passcontroller.text,
+        "re-password": _re_passcontroller.text,
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  @override
+  void clearText() {
+    _emailcontroller.clear();
+    _passcontroller.clear();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +103,7 @@ class _screen_3State extends State<screen_3> {
                     fillColor: Colors.grey.shade300,
                     filled: true,
                     hintText: 'Email',
+                    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -94,6 +119,8 @@ class _screen_3State extends State<screen_3> {
                       fillColor: Colors.grey.shade300,
                       filled: true,
                       hintText: 'password',
+                      contentPadding:
+                          EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -119,6 +146,8 @@ class _screen_3State extends State<screen_3> {
                       fillColor: Colors.grey.shade300,
                       filled: true,
                       hintText: 'Re-enterpassword',
+                      contentPadding:
+                          EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -140,28 +169,37 @@ class _screen_3State extends State<screen_3> {
                   children: [
                     Center(
                       child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          shadowColor: Colors.amberAccent,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 30.0, vertical: 8.0),
+                          shape: StadiumBorder(),
+                        ),
                         onPressed: () {
                           setState(() {
-                            if (_emailcontroller.text.length <= 8) {
-                              if (_passcontroller.text.length <= 5) {
-                                if (_re_passcontroller.text.length <= 8) {
+                            if (_emailcontroller.text.length <= 8 ||
+                                _emailcontroller.text.isEmpty) {
+                              if (_passcontroller.text.length <= 5 ||
+                                  _passcontroller.text.isEmpty) {
+                                if (_re_passcontroller.text.length <= 8 ||
+                                    _re_passcontroller.text.isEmpty) {
                                   _repasserror = "Enter the same email";
                                 }
                                 _passError = "Enter a valid pass";
                               }
                               _emailError = "Enter a valid email";
                             } else {
-                              print(
-                                  "email:${_emailcontroller.text} \n password : ${_passcontroller.text} \n re-pass : ${_re_passcontroller.text}");
+                              printData();
                             }
                           });
                           _emailcontroller.clear();
                           _passcontroller.clear();
                           _re_passcontroller.clear();
-                        },  
+                          Navigator.pushNamed(context, "S2");
+                        },
                         child: Center(
                           child: Text(
-                            "sign up",
+                            "Create an account",
                             style: TextStyle(
                                 color: Colors.white70,
                                 fontSize: 24,
@@ -182,7 +220,9 @@ class _screen_3State extends State<screen_3> {
                     //         icon: Icon(Icons.arrow_forward))),
                   ],
                 ),
-                SizedBox(height: 12,),
+                SizedBox(
+                  height: 12,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -200,7 +240,9 @@ class _screen_3State extends State<screen_3> {
                         )),
                   ],
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 Container(
                   child: ElevatedButton(
                     child: Text("go to screen 4"),
