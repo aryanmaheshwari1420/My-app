@@ -17,7 +17,7 @@ void main()  async{
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: screen_3(title: 'hfj'),
+    home: Screen1(title: "hello"),
     routes: {
       'S1': (context) => Screen1(title: "Screen 1"),
       'S2': (context) => screen2(title: 'Screen 2'),

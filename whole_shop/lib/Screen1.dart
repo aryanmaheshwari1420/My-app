@@ -9,7 +9,7 @@ import 'screen2.dart';
 
 class Screen1 extends StatelessWidget {
   String title = '';
-  Screen1({Key? key,required this.title}) : super(key: key);
+  Screen1({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +19,15 @@ class Screen1 extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: NetworkImage(
-                        "https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&w=1000&q=80"),
+                  image: new AssetImage("images/J59.gif"),
+                    // image: NetworkImage(
+                    //     "https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&w=1000&q=80"),
                     fit: BoxFit.cover)),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              color: Colors.red,
+              // color: Colors.red,
 
               height: 800,
               width: 450,
@@ -35,9 +36,8 @@ class Screen1 extends StatelessWidget {
                 child: Text(
                   "Welcome to     \n     MeetMe app",
                   style: TextStyle(
-                      fontSize: 35, color: Color.fromARGB(255, 184, 203, 204)),
+                      fontSize: 35, color: Color.fromARGB(255, 193, 213, 214)),
                 ),
-                
               ),
             ),
           ),
@@ -46,17 +46,20 @@ class Screen1 extends StatelessWidget {
             child: Container(
               height: 400,
               width: 370,
-              color: Colors.green,
+              // color: Colors.green,
               child: Column(
                 children: [
                   Container(
                     padding: EdgeInsets.only(top: 50),
                     child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shadowColor: Colors.lightBlueAccent,
+                        style: 
+                        ElevatedButton.styleFrom(
+                          primary: Color.fromARGB(255, 155, 204, 235),
+                          shadowColor: Colors.grey,
                           padding: EdgeInsets.symmetric(
                               horizontal: 100.0, vertical: 8.0),
                           shape: StadiumBorder(),
+                          
                         ),
                         onPressed: () {
                           Navigator.push(context,
@@ -75,6 +78,7 @@ class Screen1 extends StatelessWidget {
                   Container(
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          primary: Color.fromARGB(255, 155, 204, 235),
                           shadowColor: Colors.lightBlueAccent,
                           padding: EdgeInsets.symmetric(
                               horizontal: 100.0, vertical: 8.0),
