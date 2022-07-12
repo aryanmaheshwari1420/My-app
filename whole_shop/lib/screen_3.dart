@@ -145,7 +145,7 @@ class _screen_3State extends State<screen_3> {
                       errorText: _repasserror,
                       fillColor: Colors.grey.shade300,
                       filled: true,
-                      hintText: 'Re-enterpassword',
+                      hintText: 'Re-enter your password',
                       contentPadding:
                           EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                       border: OutlineInputBorder(

@@ -17,13 +17,13 @@ void main()  async{
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Screen1(title: "hello"),
+    home: welcomescreen(),
     routes: {
       'S1': (context) => Screen1(title: "Screen 1"),
       'S2': (context) => screen2(title: 'Screen 2'),
       'S3': (context) => Screen3(title: "Screen 3"),
       'S4': (context) => Screen4(title: "Screen 4"),
-      'S5':((context) => dashboard()),
+      // 'S5':((context) => dashboard()),
     },
   ));
 }
