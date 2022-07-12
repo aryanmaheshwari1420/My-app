@@ -237,8 +237,10 @@ class _screen2State extends State<screen2> {
                         ))
                   ],
                 ),
-                SizedBox(height: 20,),
-                 Row(
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Expanded(
@@ -264,19 +266,28 @@ class _screen2State extends State<screen2> {
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 73,top: 20),
-                      child: Image(image: AssetImage("assets/images/google.png"),height: 60,width: 45,),
-                      
+                      padding: const EdgeInsets.only(left: 73, top: 20),
+                      child: Image(
+                        image: AssetImage("assets/images/google.png"),
+                        height: 60,
+                        width: 45,
+                      ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 40,top: 20),
-                      child: Image(image: AssetImage("assets/images/insta.png"),height: 60,width: 55,),
-                      
+                      padding: const EdgeInsets.only(left: 40, top: 20),
+                      child: Image(
+                        image: AssetImage("assets/images/insta.png"),
+                        height: 60,
+                        width: 55,
+                      ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 40,top: 20),
-                      child: Image(image: AssetImage("assets/images/twitter.png"),height: 60,width: 45,),
-                      
+                      padding: const EdgeInsets.only(left: 40, top: 20),
+                      child: Image(
+                        image: AssetImage("assets/images/twitter.png"),
+                        height: 60,
+                        width: 45,
+                      ),
                     ),
                     // Image(image: AssetImage("images/insta.png"), height: 10,width: 10,),
                     // Image(image: AssetImage("images/twitter.png"), height: 10,width: 10,),
@@ -284,60 +295,6 @@ class _screen2State extends State<screen2> {
                 )
               ],
             ),
-
-            // child: Column(
-            //   children: [
-            //     TextField(
-            //       decoration: InputDecoration(
-            //         fillColor: Colors.grey.shade300,
-            //         filled: true,
-            //         hintText: 'Email',
-            //         border: OutlineInputBorder(
-            //           borderRadius: BorderRadius.circular(20),
-            //         ),
-            //       ),
-            //     ),
-            //     const SizedBox(
-            //       height: 30,
-            //     ),
-            //     TextField(
-            //       decoration: InputDecoration(
-            //         fillColor: Colors.grey.shade300,
-            //         filled: true,
-            //         hintText: 'password',
-            //         border: OutlineInputBorder(
-            //           borderRadius: BorderRadius.circular(20),
-            //         ),
-            //       ),
-            //     ),
-            //     const SizedBox(
-            //       height: 20,
-            //     ),
-            //     Row(
-            //       mainAxisAlignment: MainAxisAlignment.center,
-            //       children: [
-
-            //         ElevatedButton(onPressed: (){}, child:Text(
-            //           "Sign in",
-            //           style: TextStyle(
-            //               color: Colors.white70,
-            //               fontSize: 24,
-            //               fontWeight: FontWeight.w800),
-            //         ), )
-            //       ],
-            //     ),
-            //     const SizedBox(
-            //       height: 20,
-            //     ),
-            //     Row(
-            //       mainAxisAlignment: MainAxisAlignment.center,
-            //       children: [
-            //         Text("Not registered yet?",style: TextStyle(fontSize: 15,color: Color.fromARGB(255, 54, 60, 61)),),
-            //         TextButton(onPressed: (){}, child: Text("Create an account",style: TextStyle(fontSize: 20),))
-            //       ],
-            //     )
-            //   ],
-            // ),
           ),
         )
       ]),
