@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 // import 'dart:js_util';
 
@@ -51,14 +51,13 @@ class _screen2State extends State<screen2> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text(
-          "Sign in",
-          style: TextStyle(
-            color: Color.fromARGB(255, 238, 243, 244),
+          title: Text(
+            "Sign in",
+            style: TextStyle(
+              color: Color.fromARGB(255, 238, 243, 244),
+            ),
           ),
-        ),
-        backgroundColor: Color.fromARGB(255, 141, 125, 88),
-      ),
+          backgroundColor: Colors.grey.shade500),
       backgroundColor: Colors.transparent,
       body: Stack(children: [
         Container(
@@ -101,9 +100,10 @@ class _screen2State extends State<screen2> {
                       fillColor: Colors.grey.shade300,
                       filled: true,
                       hintText: 'Email',
-                      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(25),
                       ),
                     ),
                   ),
@@ -118,9 +118,10 @@ class _screen2State extends State<screen2> {
                         fillColor: Colors.grey.shade300,
                         filled: true,
                         hintText: 'password',
-                        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                        contentPadding:
+                            EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(25),
                         ),
                         suffixIcon: IconButton(
                             onPressed: () {
@@ -133,19 +134,22 @@ class _screen2State extends State<screen2> {
                                 : Icons.remove_red_eye_outlined))),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
                             return screen_3(title: "login screen");
                           }));
                         },
                         child: Text(
                           "Forgot password?",
-                          style: TextStyle(fontSize: 15,color: Colors.black54),
+                          style: TextStyle(fontSize: 15, color: Colors.black54),
                         )),
                   ],
                 ),
@@ -154,13 +158,13 @@ class _screen2State extends State<screen2> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                       style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 189, 186, 164),
-                          shadowColor: Color.fromARGB(255, 187, 186, 179),
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 30.0, vertical: 8.0),
-                          shape: StadiumBorder(),
-                        ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 189, 186, 164),
+                        shadowColor: Color.fromARGB(255, 187, 186, 179),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 30.0, vertical: 8.0),
+                        shape: StadiumBorder(),
+                      ),
                       onPressed: () {
                         setState(() {
                           if (_emailcontroller.text.length <= 5) {
@@ -191,6 +195,29 @@ class _screen2State extends State<screen2> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Expanded(
+                      child: Divider(
+                        indent: 20.0,
+                        endIndent: 10.0,
+                        thickness: 1,
+                      ),
+                    ),
+                    Text(
+                      "OR",
+                      style: TextStyle(color: Colors.blueGrey),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        indent: 10.0,
+                        endIndent: 20.0,
+                        thickness: 1,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       "Not registered yet?",
@@ -199,7 +226,8 @@ class _screen2State extends State<screen2> {
                     ),
                     TextButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
                             return screen_3(title: "Sign up");
                           }));
                         },
@@ -207,6 +235,51 @@ class _screen2State extends State<screen2> {
                           "Create an account",
                           style: TextStyle(fontSize: 20),
                         ))
+                  ],
+                ),
+                SizedBox(height: 20,),
+                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Expanded(
+                      child: Divider(
+                        indent: 20.0,
+                        endIndent: 10.0,
+                        thickness: 1,
+                      ),
+                    ),
+                    Text(
+                      "OR",
+                      style: TextStyle(color: Colors.blueGrey),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        indent: 10.0,
+                        endIndent: 20.0,
+                        thickness: 1,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 73,top: 20),
+                      child: Image(image: AssetImage("assets/images/google.png"),height: 60,width: 45,),
+                      
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 40,top: 20),
+                      child: Image(image: AssetImage("assets/images/insta.png"),height: 60,width: 55,),
+                      
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 40,top: 20),
+                      child: Image(image: AssetImage("assets/images/twitter.png"),height: 60,width: 45,),
+                      
+                    ),
+                    // Image(image: AssetImage("images/insta.png"), height: 10,width: 10,),
+                    // Image(image: AssetImage("images/twitter.png"), height: 10,width: 10,),
                   ],
                 )
               ],

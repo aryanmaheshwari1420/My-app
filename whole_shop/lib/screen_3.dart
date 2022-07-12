@@ -53,7 +53,7 @@ class _screen_3State extends State<screen_3> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Sign Up Page",
+          "Sign Up",
           style: TextStyle(
             color: Color.fromARGB(255, 238, 243, 244),
           ),
@@ -105,7 +105,7 @@ class _screen_3State extends State<screen_3> {
                     hintText: 'Email',
                     contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(25),
                     ),
                   ),
                 ),
@@ -122,7 +122,7 @@ class _screen_3State extends State<screen_3> {
                       contentPadding:
                           EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(25),
                       ),
                       suffixIcon: IconButton(
                           onPressed: () {
@@ -149,7 +149,7 @@ class _screen_3State extends State<screen_3> {
                       contentPadding:
                           EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(25),
                       ),
                       suffixIcon: IconButton(
                           onPressed: () {
@@ -162,8 +162,9 @@ class _screen_3State extends State<screen_3> {
                               : Icons.remove_red_eye_outlined))),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 40,
                 ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -221,9 +222,34 @@ class _screen_3State extends State<screen_3> {
                     //         icon: Icon(Icons.arrow_forward))),
                   ],
                 ),
+
                 SizedBox(
-                  height: 12,
+                  height:30,
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Expanded(
+                      child: Divider(
+                        indent: 20.0,
+                        endIndent: 10.0,
+                        thickness: 1,
+                      ),
+                    ),
+                    Text(
+                      "OR",
+                      style: TextStyle(color: Colors.blueGrey),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        indent: 10.0,
+                        endIndent: 20.0,
+                        thickness: 1,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -244,6 +270,7 @@ class _screen_3State extends State<screen_3> {
                 SizedBox(
                   height: 20,
                 ),
+                
                 // Container(
                 //   child: ElevatedButton(
                 //     child: Text("go to screen 4"),
