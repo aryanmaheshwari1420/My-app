@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:whole_shop/screen3.dart';
+import 'package:whole_shop/screen_3.dart';
 
 import 'screen2.dart';
 
@@ -19,7 +20,7 @@ class Screen1 extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: new AssetImage("images/J59.gif"),
+                    image: new AssetImage("images/J59.gif"),
                     // image: NetworkImage(
                     //     "https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&w=1000&q=80"),
                     fit: BoxFit.cover)),
@@ -52,14 +53,12 @@ class Screen1 extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.only(top: 50),
                     child: ElevatedButton(
-                        style: 
-                        ElevatedButton.styleFrom(
+                        style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 27, 88, 125),
                           shadowColor: Colors.grey,
                           padding: EdgeInsets.symmetric(
                               horizontal: 100.0, vertical: 8.0),
                           shape: StadiumBorder(),
-                          
                         ),
                         onPressed: () {
                           Navigator.push(context,
@@ -87,7 +86,7 @@ class Screen1 extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return Screen3(title: "Sign Up");
+                            return screen_3(title: 'sign up ');
                           }));
                         },
                         child: Text(

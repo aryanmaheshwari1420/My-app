@@ -154,6 +154,13 @@ class _screen2State extends State<screen2> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
+                       style: ElevatedButton.styleFrom(
+                          primary: Color.fromARGB(255, 189, 186, 164),
+                          shadowColor: Color.fromARGB(255, 187, 186, 179),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 30.0, vertical: 8.0),
+                          shape: StadiumBorder(),
+                        ),
                       onPressed: () {
                         setState(() {
                           if (_emailcontroller.text.length <= 5) {

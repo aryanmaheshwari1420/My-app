@@ -23,6 +23,7 @@ void main()  async{
       'S2': (context) => screen2(title: 'Screen 2'),
       'S3': (context) => Screen3(title: "Screen 3"),
       'S4': (context) => Screen4(title: "Screen 4"),
+      'S5':(context) =>  screen_3(title: "Screen 3"),
       // 'S5':((context) => dashboard()),
     },
   ));

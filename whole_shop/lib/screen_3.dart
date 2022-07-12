@@ -170,7 +170,8 @@ class _screen_3State extends State<screen_3> {
                     Center(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          shadowColor: Colors.amberAccent,
+                          primary: Color.fromARGB(255, 189, 186, 164),
+                          shadowColor: Color.fromARGB(255, 187, 186, 179),
                           padding: EdgeInsets.symmetric(
                               horizontal: 30.0, vertical: 8.0),
                           shape: StadiumBorder(),
@@ -243,19 +244,19 @@ class _screen_3State extends State<screen_3> {
                 SizedBox(
                   height: 20,
                 ),
-                Container(
-                  child: ElevatedButton(
-                    child: Text("go to screen 4"),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return Screen4(
-                          title: 'pizza screen',
-                        );
-                      }));
-                    },
-                  ),
-                )
+                // Container(
+                //   child: ElevatedButton(
+                //     child: Text("go to screen 4"),
+                //     onPressed: () {
+                //       Navigator.push(context,
+                //           MaterialPageRoute(builder: (context) {
+                //         return Screen4(
+                //           title: 'pizza screen',
+                //         );
+                //       }));
+                //     },
+                //   ),
+                // )
               ],
             ),
           ),
