@@ -57,7 +57,8 @@ class _screen2State extends State<screen2> {
               color: Color.fromARGB(255, 238, 243, 244),
             ),
           ),
-          backgroundColor: Colors.grey.shade500),
+          backgroundColor: Color.fromARGB(255, 179, 160, 120),
+      ),
       backgroundColor: Colors.transparent,
       body: Stack(children: [
         Container(
@@ -159,7 +160,7 @@ class _screen2State extends State<screen2> {
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 189, 186, 164),
+                        primary: Color.fromARGB(255, 89, 96, 96),
                         shadowColor: Color.fromARGB(255, 187, 186, 179),
                         padding: EdgeInsets.symmetric(
                             horizontal: 30.0, vertical: 8.0),
@@ -178,7 +179,7 @@ class _screen2State extends State<screen2> {
                         });
                         _emailcontroller.clear();
                         _passcontroller.clear();
-                        Navigator.pushNamed(context, "S5");
+                        Navigator.popAndPushNamed(context, "S6");
                       },
                       child: Text(
                         "Sign in",
