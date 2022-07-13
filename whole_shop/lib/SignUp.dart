@@ -7,15 +7,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:whole_shop/dashboard.dart';
 import 'package:whole_shop/screen4.dart';
 
-class screen_3 extends StatefulWidget {
-  String title = '';
-  screen_3({Key? key, required this.title}) : super(key: key);
+class SignUp extends StatefulWidget {
+  SignUp({Key? key,}) : super(key: key);
 
   @override
-  State<screen_3> createState() => _screen_3State();
+  State<SignUp> createState() => _screen_3State();
 }
 
-class _screen_3State extends State<screen_3> {
+class _screen_3State extends State<SignUp> {
   var _secureText = true;
   var _secureText_2 = true;
   var msgController = TextEditingController();

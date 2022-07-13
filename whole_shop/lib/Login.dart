@@ -6,17 +6,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:whole_shop/screen_3.dart';
 
-class screen2 extends StatefulWidget {
-  String title = '';
-  screen2({Key? key, required this.title}) : super(key: key);
+import 'SignUp.dart';
+
+class Login extends StatefulWidget {
+  Login({Key? key,}) : super(key: key);
 
   @override
-  State<screen2> createState() => _screen2State();
+  State<Login> createState() => _LoginState();
 }
 
-class _screen2State extends State<screen2> {
+class _LoginState extends State<Login> {
   final _passcontroller = TextEditingController();
   final _emailcontroller = TextEditingController();
 
@@ -145,7 +145,7 @@ class _screen2State extends State<screen2> {
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return screen_3(title: "login screen");
+                            return SignUp();
                           }));
                         },
                         child: Text(
@@ -229,7 +229,7 @@ class _screen2State extends State<screen2> {
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return screen_3(title: "Sign up");
+                            return SignUp();
                           }));
                         },
                         child: Text(

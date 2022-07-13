@@ -1,4 +1,3 @@
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -124,7 +123,9 @@ class dashboard extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0)),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.popAndPushNamed(context, 'S7');
+                        },
                         child: Text(
                           "Get Started",
                           style: TextStyle(fontSize: 20, color: Colors.white),

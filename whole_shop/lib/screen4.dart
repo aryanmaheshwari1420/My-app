@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:whole_shop/screen3.dart';
-import 'package:whole_shop/welcomescreen.dart';
+import 'package:whole_shop/dashboard.dart';
 
 class Screen4 extends StatelessWidget {
   String title = '';
@@ -155,7 +154,7 @@ class Screen4 extends StatelessWidget {
             child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return welcomescreen();
+                    return dashboard();
                   }));
                 },
                 child: Text("Go to welcome screen")),
