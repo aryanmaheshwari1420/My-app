@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -106,10 +108,82 @@ class _HomePageState extends State<HomePage> {
               )
             ],
           ),
-          SizedBox(height: 15.0,),
+          SizedBox(
+            height: 15.0,
+          ),
           Container(
             alignment: Alignment.centerLeft,
             padding: EdgeInsets.only(left: 15.0),
+            child: Text(
+              'September 7',
+              style: TextStyle(
+                  fontFamily: 'Quicksand', color: Colors.grey, fontSize: 14.0),
+            ),
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            padding: EdgeInsets.only(left: 15.0),
+            child: Text(
+              'TODAY',
+              style: TextStyle(
+                  fontFamily: 'Timesroman',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30.0),
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Stack(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 12.0, right: 12.0),
+                child: Container(
+                  height: 275.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.0),
+                    image: DecorationImage(
+                        image: AssetImage("assets/breakfast.jpg"),
+                        fit: BoxFit.cover),
+                  ),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 1.5, sigmaY: 1.5),
+                    child: Container(
+                      decoration:
+                          BoxDecoration(color: Colors.white.withOpacity(0.0)),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                  padding: EdgeInsets.only(top: 150.0, left: 60.0),
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'BEST OF',
+                        style: TextStyle(
+                            fontFamily: 'Timesroman',
+                            fontSize: 25.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'THE DAY',
+                        style: TextStyle(
+                            fontFamily: 'Timesroman',
+                            fontSize: 25.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 10.0),
+                      Container(
+                        height: 3.0,
+                        width: 50.0,
+                        color: Colors.orange,
+                      )
+                    ],
+                  ))
+            ],
           )
         ],
       ),
