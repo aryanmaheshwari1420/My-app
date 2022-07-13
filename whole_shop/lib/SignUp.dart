@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:whole_shop/dashboard.dart';
-import 'package:whole_shop/screen4.dart';
+import 'package:whole_shop/Pizza.dart';
 
 class SignUp extends StatefulWidget {
   SignUp({Key? key,}) : super(key: key);

@@ -5,6 +5,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:whole_shop/Pizza.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -14,21 +16,19 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedItem = 0;
+  var _pages = Pizza();
   @override
   Widget build(BuildContext context) {
     // ignore: unnecessary_new
     return new Scaffold(
-
-       bottomNavigationBar: BottomNavigationBar(
-        
-        
+  
+      bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.menu), label: "Menu"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.add_chart), label: "Cart"),
+          BottomNavigationBarItem(icon: Icon(Icons.menu), label: "Menu",),
+          BottomNavigationBarItem(icon: Icon(Icons.add_chart), label: "Cart"),
         ],
-        type: BottomNavigationBarType.fixed,// this fixed the bottom items
+        type: BottomNavigationBarType.fixed, // this fixed the bottom items
         backgroundColor: Colors.grey,
         fixedColor: Colors.white,
         currentIndex: _selectedItem,
@@ -40,16 +40,11 @@ class _HomePageState extends State<HomePage> {
       ),
       // backgroundColor: Colors.yellow,
 
-
-
-
-
-    resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: <Widget>[
           Stack(
             children: <Widget>[
-              Text("Welcome to Meetme"),
               Container(
                 height: 250.0,
                 color: Colors.grey,
@@ -165,7 +160,10 @@ class _HomePageState extends State<HomePage> {
           Stack(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 12.0, right: 12.0,),
+                padding: EdgeInsets.only(
+                  left: 12.0,
+                  right: 12.0,
+                ),
                 child: Container(
                   height: 275.0,
                   decoration: BoxDecoration(
@@ -208,7 +206,6 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-
     );
   }
 

@@ -3,9 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:whole_shop/dashboard.dart';
 
-class Screen4 extends StatelessWidget {
-  String title = '';
-  Screen4({Key? key, required this.title}) : super(key: key);
+class Pizza extends StatelessWidget {
+  Pizza({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
