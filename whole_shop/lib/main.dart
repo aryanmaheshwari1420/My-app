@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whole_shop/Home_page.dart';
 import 'package:whole_shop/Screen1.dart';
 import 'package:whole_shop/dashboard.dart';
 import 'package:whole_shop/screen4.dart';
@@ -17,7 +18,7 @@ void main()  async{
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: welcomescreen(),
+    home: HomePage(),
     routes: {
       'S1': (context) => Screen1(title: "Screen 1"),
       'S2': (context) => screen2(title: 'Screen 2'),

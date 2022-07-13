@@ -18,10 +18,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // ignore: unnecessary_new
     return new Scaffold(
+      // backgroundColor: Colors.yellow,
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: <Widget>[
           Stack(
             children: <Widget>[
+              Text("Welcome to Meetme"),
               Container(
                 height: 250.0,
                 color: Colors.grey,
@@ -29,7 +32,7 @@ class _HomePageState extends State<HomePage> {
               Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.fromLTRB(15.0, 35.0, 15.0, 10.0),
+                    padding: EdgeInsets.fromLTRB(15.0, 125.0, 15.0, 10.0),
                     child: Material(
                       elevation: 10.0,
                       borderRadius: BorderRadius.circular(25.0),
@@ -143,15 +146,8 @@ class _HomePageState extends State<HomePage> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
                     image: DecorationImage(
-                        image: AssetImage("assets/breakfast.jpg"),
+                        image: AssetImage("images/breakfast.jpg"),
                         fit: BoxFit.cover),
-                  ),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 1.5, sigmaY: 1.5),
-                    child: Container(
-                      decoration:
-                          BoxDecoration(color: Colors.white.withOpacity(0.0)),
-                    ),
                   ),
                 ),
               ),
@@ -203,7 +199,7 @@ class _HomePageState extends State<HomePage> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12.0),
                 image:
-                    DecorationImage(image: AssetImage("assets/balanced.jpg"))),
+                    DecorationImage(image: AssetImage("images/balanced.jpg"))),
             height: 125.0,
             width: 100.0,
           ),
@@ -241,7 +237,7 @@ class _HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12.5),
                           image: DecorationImage(
-                              image: AssetImage('assets/chris.jpg')))),
+                              image: AssetImage('images/chris.jpg')))),
                   SizedBox(
                     width: 10.0,
                   ),
