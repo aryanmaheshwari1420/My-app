@@ -5,7 +5,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -14,12 +13,38 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedItem = 0;
   @override
   Widget build(BuildContext context) {
     // ignore: unnecessary_new
     return new Scaffold(
+
+       bottomNavigationBar: BottomNavigationBar(
+        
+        
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.menu), label: "Menu"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.add_chart), label: "Cart"),
+        ],
+        type: BottomNavigationBarType.fixed,// this fixed the bottom items
+        backgroundColor: Colors.grey,
+        fixedColor: Colors.white,
+        currentIndex: _selectedItem,
+        onTap: (setvalue) {
+          setState(() {
+            _selectedItem = setvalue;
+          });
+        },
+      ),
       // backgroundColor: Colors.yellow,
-      resizeToAvoidBottomInset: false,
+
+
+
+
+
+    resizeToAvoidBottomInset: false,
       body: Column(
         children: <Widget>[
           Stack(
@@ -32,7 +57,7 @@ class _HomePageState extends State<HomePage> {
               Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.fromLTRB(15.0, 125.0, 15.0, 10.0),
+                    padding: EdgeInsets.fromLTRB(15.0, 100.0, 15.0, 10.0),
                     child: Material(
                       elevation: 10.0,
                       borderRadius: BorderRadius.circular(25.0),
@@ -118,7 +143,7 @@ class _HomePageState extends State<HomePage> {
             alignment: Alignment.centerLeft,
             padding: EdgeInsets.only(left: 15.0),
             child: Text(
-              'September 7',
+              'July 15',
               style: TextStyle(
                   fontFamily: 'Quicksand', color: Colors.grey, fontSize: 14.0),
             ),
@@ -135,12 +160,12 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SizedBox(
-            height: 10.0,
+            height: 20.0,
           ),
           Stack(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 12.0, right: 12.0),
+                padding: EdgeInsets.only(left: 12.0, right: 12.0,),
                 child: Container(
                   height: 275.0,
                   decoration: BoxDecoration(
@@ -183,6 +208,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
+
     );
   }
 
