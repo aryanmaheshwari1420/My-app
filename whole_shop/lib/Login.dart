@@ -179,7 +179,7 @@ class _LoginState extends State<Login> {
                         });
                         _emailcontroller.clear();
                         _passcontroller.clear();
-                        Navigator.popAndPushNamed(context, "S6");
+                        Navigator.popAndPushNamed(context, "S4");
                       },
                       child: Text(
                         "Sign in",
@@ -269,7 +269,7 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: const EdgeInsets.only(left: 73, top: 20),
                       child: Image(
-                        image: AssetImage("assets/images/google.png"),
+                        image: AssetImage("images/google.png"),
                         height: 60,
                         width: 45,
                       ),
@@ -277,7 +277,7 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: const EdgeInsets.only(left: 40, top: 20),
                       child: Image(
-                        image: AssetImage("assets/images/insta.png"),
+                        image: AssetImage("images/insta.png"),
                         height: 60,
                         width: 55,
                       ),
@@ -285,7 +285,7 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: const EdgeInsets.only(left: 40, top: 20),
                       child: Image(
-                        image: AssetImage("assets/images/twitter.png"),
+                        image: AssetImage("images/twitter.png"),
                         height: 60,
                         width: 45,
                       ),

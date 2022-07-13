@@ -16,7 +16,7 @@ void main()  async{
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: HomePage(),
+    home: WelcomeScreen(),
     routes: {
       'S1': (context) => WelcomeScreen(),
       'S2': (context) => Login(),

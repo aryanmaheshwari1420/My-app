@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, unnecessary_new
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -124,7 +126,7 @@ class dashboard extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10.0)),
                         ),
                         onPressed: () {
-                          Navigator.popAndPushNamed(context, 'S7');
+                          Navigator.popAndPushNamed(context, 'S5');
                         },
                         child: Text(
                           "Get Started",
