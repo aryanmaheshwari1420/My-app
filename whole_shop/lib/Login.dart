@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, void_checks
 
 // import 'dart:js_util';
 
@@ -167,13 +167,13 @@ class _LoginState extends State<Login> {
                         shape: StadiumBorder(),
                       ),
                       onPressed: () {
-                        setState(() {
+                        setState((){
                           if (_emailcontroller.text.length <= 5) {
                             if (_passcontroller.text.length <= 5) {
                               _errorpass = "Enter a valid pass";
                             }
                             _erroremail = "Enter a valid email";
-                          } else {
+                          }  else {
                             printData();
                           }
                         });
