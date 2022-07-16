@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePage> {
             alignment: Alignment.centerLeft,
             padding: EdgeInsets.only(left: 15.0),
             child: Text(
-              'July 15',
+              'July 18',
               style: TextStyle(
                   fontFamily: 'Quicksand', color: Colors.grey, fontSize: 14.0),
             ),
