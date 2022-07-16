@@ -167,7 +167,7 @@ class _LoginState extends State<Login> {
                         shape: StadiumBorder(),
                       ),
                       onPressed: () {
-                        setState((){
+                        setState(() {
                           if (_emailcontroller.text.length <= 5) {
                             if (_passcontroller.text.length <= 5) {
                               _errorpass = "Enter a valid pass";
@@ -175,11 +175,11 @@ class _LoginState extends State<Login> {
                             _erroremail = "Enter a valid email";
                           }  else {
                             printData();
+                        Navigator.popAndPushNamed(context, "S4");
                           }
                         });
                         _emailcontroller.clear();
                         _passcontroller.clear();
-                        Navigator.popAndPushNamed(context, "S4");
                       },
                       child: Text(
                         "Sign in",

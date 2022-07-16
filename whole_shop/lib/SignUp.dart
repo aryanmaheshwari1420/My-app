@@ -191,12 +191,13 @@ class _screen_3State extends State<SignUp> {
                               _emailError = "Enter a valid email";
                             } else {
                               printData();
+                          Navigator.pushNamed(context, "S2");
+
                             }
                           });
                           _emailcontroller.clear();
                           _passcontroller.clear();
                           _re_passcontroller.clear();
-                          Navigator.pushNamed(context, "S2");
                         },
                         child: Center(
                           child: Text(
