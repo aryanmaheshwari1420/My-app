@@ -178,11 +178,11 @@ class _screen_3State extends State<SignUp> {
                         ),
                         onPressed: () {
                           setState(() {
-                            if (_emailcontroller.text.length <= 8 ||
+                            if (_emailcontroller.text.length <= 5 ||
                                 _emailcontroller.text.isEmpty) {
                               if (_passcontroller.text.length <= 5 ||
                                   _passcontroller.text.isEmpty) {
-                                if (_re_passcontroller.text.length <= 8 ||
+                                if (_re_passcontroller.text.length <= 5 ||
                                     _re_passcontroller.text.isEmpty) {
                                   _repasserror = "Enter the same email";
                                 }
