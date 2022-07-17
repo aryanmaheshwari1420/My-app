@@ -23,9 +23,6 @@ void main()  async{
       'S3': (context) =>  SignUp(),
       'S4': (context) => dashboard(),
       'S5': (context) => HomePage()
-      // 'S6':(context) =>  dashboard(),
-      
-      // 'S5':((context) => dashboard()),
     },
   ));
 }

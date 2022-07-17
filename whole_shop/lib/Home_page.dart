@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_import
 
 import 'dart:ui';
 
@@ -16,12 +16,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedItem = 0;
-  var _pages = Pizza();
   @override
   Widget build(BuildContext context) {
     // ignore: unnecessary_new
     return new Scaffold(
-  
+
+       appBar: AppBar(
+        title: Text("Bottom Navigation"),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
@@ -42,7 +44,7 @@ class _HomePageState extends State<HomePage> {
 
       resizeToAvoidBottomInset: false,
       body: Column(
-        children: <Widget>[
+        children: <Widget>[          
           Stack(
             children: <Widget>[
               Container(
