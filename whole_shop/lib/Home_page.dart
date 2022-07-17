@@ -20,10 +20,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // ignore: unnecessary_new
     return new Scaffold(
-
-       appBar: AppBar(
-        title: Text("Bottom Navigation"),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
